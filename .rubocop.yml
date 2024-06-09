@@ -1,0 +1,11 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0 # ou a versão do Ruby que você está utilizando
+  NewCops: enable
+
+Rails:
+  Enabled: true

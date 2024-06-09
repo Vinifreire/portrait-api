@@ -1,0 +1,18 @@
+development: &default
+  host: redis-portrait
+  port: 6379
+  db: 0
+  expire: 3600 # 1 hora em segundos
+    
+
+test:
+  host: redis-portrait
+  port: 6379
+  db: 0
+  expire: 36000 # 10 horas em segundos
+
+production:
+  host: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  port: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  db: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+    

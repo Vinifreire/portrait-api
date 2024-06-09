@@ -1,0 +1,11 @@
+development: &default
+  url: https://api.polygon.io/v2/aggs/ticker
+  key: <%= ENV.fetch("POLYGON_API_KEY") { "missing-api-key" } %>
+
+test:
+  url: https://api.polygon.io/v2/aggs/ticker
+  key: api-key
+
+production:
+  url: https://api.polygon.io/v2/aggs/ticker
+  key: <%= ENV.fetch("POLYGON_API_KEY") { "missing-api-key" } %>
