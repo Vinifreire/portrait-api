@@ -3,7 +3,7 @@
 class TickerCalculateService
   class << self
     def call(results, deps={})
-      new(results, deps).to_json
+      new(results, deps).hash_to_json
     end
   end
 
@@ -15,7 +15,7 @@ class TickerCalculateService
     calculate
   end
 
-  def to_json
+  def hash_to_json
     {
       'price': [highest_price, lowest_price, (highest_price + lowest_price)/2],
       'volume': [highest_volume, lowest_volume, avarege_volume/results.count]
